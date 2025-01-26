@@ -72,7 +72,7 @@ int runCalc()
 	for (int i = 0; i < Count; i++) {
 		if (i != 0)
 		{
-			printf(" %c ", Operator	
+			printf(" %c ", Operator);	
 		}
 		printf("%d", Operands[i]);
 	}
