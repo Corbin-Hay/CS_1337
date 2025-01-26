@@ -110,7 +110,8 @@ bool checkOperands(int iteration)
 }
 
 void promptOp()
-{
+}
+//loop until valid operator is inputted
 	while(true)
 	{
 		printf("Enter Operation: ");
@@ -124,6 +125,7 @@ void promptOp()
 
 void promptCount()
 {
+//loop until valid count is inputted
 	while (true)
 	{
 		printf("Enter number of integers: ");
@@ -137,6 +139,7 @@ void promptCount()
 
 void promptOperands()
 {
+//nested loop to get 'count' valid operands
 	for(int i = 0; i < Count; i++)
 	{
 		while (true)
