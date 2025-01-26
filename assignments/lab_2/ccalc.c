@@ -28,9 +28,11 @@ int main() {
 
 void runStart()
 {
+	//run in order
 	do {
 		promptOp();
 		if (Operator == 'q')
+		//quit on q
 			break;
 		promptCount();
 		promptOperands();
@@ -41,7 +43,7 @@ void runStart()
 int runCalc()
 {
 	int final = 0;
-
+	//calculate
 	switch (Operator)
 	{
 	case '+':
@@ -64,12 +66,13 @@ int runCalc()
 			final /= Operands[i];
 		break;
 	}
-
+	
+	//display computation
 	printf("\nComputing: ");
 	for (int i = 0; i < Count; i++) {
 		if (i != 0)
 		{
-			printf(" %c ", Operator);  // print operator between numbers
+			printf(" %c ", Operator	
 		}
 		printf("%d", Operands[i]);
 	}
@@ -78,26 +81,31 @@ int runCalc()
 
 bool checkOp()
 {
+	//check for valid operators
 	return (Operator == '+' || Operator == '-' || Operator == '*' || Operator == '/' || Operator == 'q');
 }
 
 bool checkCount()
 {
+	//check valid count
 	return (Count > 1 && validInput == 1);
 }
 
 bool checkOperands(int iteration)
 {
+	//check for divide by zero error
 	if (Operator == '/' && iteration != 0 && Operands[iteration] == 0 && validInput != 0)
 	{
 		printf("Please enter a non-zero integer for division\n");
 		return false;
 	}
+	//check for invalid input
 	if(validInput == 0)
 	{
 		printf("Please enter an integer\n");
 		return false;
 	}
+	//else
 	return true;
 }
 
@@ -144,6 +152,7 @@ void promptOperands()
 	}
 }
 
+//function to clear input buffer
 void clearInput()
 {
 	char buffer;
